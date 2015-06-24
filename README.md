@@ -17,7 +17,7 @@ manually to your composer.json as follows:
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Orteko/yii2-psr3-log-adapter.git"
+            "url": "https://github.com/orteko/yii2-psr3-log-adapter.git"
         }
     ],
 ```
