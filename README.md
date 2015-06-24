@@ -13,7 +13,7 @@ Installation
 As this package is a work in progress you will need to add this repository
 manually to your composer.json as follows:
 
-```
+```json
     "repositories": [
         {
             "type": "vcs",
@@ -31,7 +31,7 @@ composer require orteko/yii2-psr3-log-adapter dev-master
 Usage
 -----
 
-```
+```php
 use Orteko\PSR3LogAdapter\Logger;
 use Psr\Log\LogLevel;
 
