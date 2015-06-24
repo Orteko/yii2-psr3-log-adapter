@@ -1,9 +1,10 @@
 <?php
 
-use Psr\Log;
-use yii\log\Logger;
-
 namespace Orteko\Yii2PSR3LogAdapater;
+
+use Psr\Log\AbstractLogger;
+use Psr\Log\LogLevel;
+use yii\log\Logger;
 
 /**
  * Yii2 logger adapater that can be injected into libraries expecting a PSR3
@@ -16,14 +17,14 @@ class PSR3LogAdapter extends AbstractLogger
     protected $logger;
 
     protected $logLevelMap = [
-        LogLevel::EMERGENCY => YiiLogger::LEVEL_ERROR,
-        LogLevel::ALERT => YiiLogger::LEVEL_ERROR,
-        LogLevel::CRITICAL => YiiLogger::LEVEL_ERROR,
-        LogLevel::ERROR => YiiLogger::LEVEL_ERROR,
-        LogLevel::WARNING => YiiLogger::LEVEL_WARNING,
-        LogLevel::NOTICE => YiiLogger::LEVEL_INFO,
-        LogLevel::INFO => YiiLogger::LEVEL_INFO,
-        LogLevel::DEBUG => YiiLogger::LEVEL_TRACE,
+        LogLevel::EMERGENCY => Logger::LEVEL_ERROR,
+        LogLevel::ALERT => Logger::LEVEL_ERROR,
+        LogLevel::CRITICAL => Logger::LEVEL_ERROR,
+        LogLevel::ERROR => Logger::LEVEL_ERROR,
+        LogLevel::WARNING => Logger::LEVEL_WARNING,
+        LogLevel::NOTICE => Logger::LEVEL_INFO,
+        LogLevel::INFO => Logger::LEVEL_INFO,
+        LogLevel::DEBUG => Logger::LEVEL_TRACE,
     ];
 
     /**
@@ -47,7 +48,7 @@ class PSR3LogAdapter extends AbstractLogger
             $messages = $this->interpolate($message, $context);
         }
 
-        $this->logger->log($message, $this->logLevelMap($level));
+        $this->logger->log($message, $this->logLevelMap[$level]);
     }
 
     /**
