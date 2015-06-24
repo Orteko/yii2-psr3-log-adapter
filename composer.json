@@ -1,0 +1,27 @@
+{
+    "name": "orteko/yii2-psr3-log-adapter",
+    "description": "Allows you to use the Yii2 logger with libraries that are expecting a PSR3 compatible logger. ",
+    "homepage": "https://github.com/orteko/yii2-psr3-log-adapter",
+    "keywords": [
+        "psr-3",
+        "yii2",
+        "log",
+        "logger"
+    ],
+    "type": "yii2-extension",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/orteko/yii2-psr3-log-adapter/issues",
+        "source": "https://github.com/orteko/yii2-psr3-log-adapter"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "psr/log": "^1.0",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orteko\\Yii2PSR3LogAdapter\\": "src/"
+        }
+    }
+}
