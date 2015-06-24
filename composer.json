@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Orteko\\Yii2PSR3LogAdapter\\": "src/"
+            "Orteko\\PSR3LogAdapter\\": "src/"
         }
     }
 }
